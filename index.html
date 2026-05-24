@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+
+<meta charset="UTF-8" />
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+<title>
+منصة أحمد شوقي | Physics Academy
+</title>
+
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Cairo',sans-serif;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#0d1117;
+  color:white;
+  overflow-x:hidden;
+}
+
+a{
+  text-decoration:none;
+  color:white;
+}
+
+.navbar{
+  width:100%;
+  padding:20px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:fixed;
+  top:0;
+  z-index:1000;
+  background:rgba(0,0,0,0.4);
+  backdrop-filter:blur(10px);
+}
+
+.logo{
+  font-size:32px;
+  font-weight:800;
+  color:#00d4ff;
+}
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:120px 8% 60px;
+  background:linear-gradient(
+    135deg,
+    #020617,
+    #0f172a,
+    #111827
+  );
+  position:relative;
+}
+
+.hero::before{
+  content:'';
+  position:absolute;
+  width:500px;
+  height:500px;
+  background:#00d4ff22;
+  border-radius:50%;
+  top:-150px;
+  left:-100px;
+  filter:blur(80px);
+}
+
+.hero-text{
+  width:50%;
+  z-index:2;
+}
+
+.hero-text h1{
+  font-size:70px;
+  line-height:1.2;
+  margin-bottom:20px;
+}
+
+.hero-text h1 span{
+  color:#00d4ff;
+}
+
+.hero-text p{
+  font-size:20px;
+  color:#cbd5e1;
+  margin-bottom:35px;
+  line-height:2;
+}
+
+.buttons{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  padding:15px 35px;
+  border-radius:14px;
+  font-size:18px;
+  font-weight:700;
+  transition:0.3s;
+  border:none;
+  cursor:pointer;
+}
+
+.primary{
+  background:#00d4ff;
+  color:#000;
+}
+
+.primary:hover{
+  transform:translateY(-5px);
+  box-shadow:0 10px 25px #00d4ff55;
+}
+
+.secondary{
+  border:2px solid #00d4ff;
+  background:transparent;
+  color:white;
+}
+
+.secondary:hover{
+  background:#00d4ff;
+  color:black;
+}
+
+.hero-image{
+  width:40%;
+  display:flex;
+  justify-content:center;
+  z-index:2;
+}
+
+.teacher-card{
+  width:360px;
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:30px;
+  padding:30px;
+  text-align:center;
+  backdrop-filter:blur(15px);
+  box-shadow:0 15px 40px rgba(0,0,0,0.4);
+}
+
+.teacher-card img{
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  object-fit:cover;
+  border:5px solid #00d4ff;
+  margin-bottom:20px;
+}
+
+.teacher-card h2{
+  font-size:34px;
+  margin-bottom:10px;
+}
+
+.teacher-card p{
+  color:#cbd5e1;
+  line-height:1.8;
+}
+
+.login-box{
+  margin-top:30px;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  max-width:400px;
+}
+
+.login-box input{
+  padding:15px;
+  border:none;
+  border-radius:12px;
+  background:#1e293b;
+  color:white;
+  font-size:16px;
+}
+
+.login-box input:focus{
+  outline:2px solid #00d4ff;
+}
+
+.courses{
+  padding:100px 8%;
+  background:#111827;
+}
+
+.section-title{
+  text-align:center;
+  font-size:48px;
+  margin-bottom:60px;
+}
+
+.section-title span{
+  color:#00d4ff;
+}
+
+.courses-grid{
+  display:grid;
+  grid-template-columns:repeat(
+    auto-fit,
+    minmax(250px,1fr)
+  );
+  gap:30px;
+}
+
+.courses-box{
+  background:#1e293b;
+  padding:35px;
+  border-radius:24px;
+  transition:0.4s;
+}
+
+.courses-box:hover{
+  transform:translateY(-10px);
+  border:1px solid #00d4ff;
+}
+
+.courses-box h3{
+  font-size:26px;
+  margin-bottom:15px;
+  color:#00d4ff;
+}
+
+.courses-box p{
+  line-height:2;
+  color:#cbd5e1;
+}
+
+.footer{
+  background:#020617;
+  text-align:center;
+  padding:35px;
+  color:#94a3b8;
+}
+
+@media(max-width:950px){
+
+.hero{
+  flex-direction:column;
+  text-align:center;
+  gap:50px;
+}
+
+.hero-text,
+.hero-image{
+  width:100%;
+}
+
+.hero-text h1{
+  font-size:48px;
+}
+
+.buttons{
+  justify-content:center;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+<div class="logo">
+Ahmed Shawky
+</div>
+
+</nav>
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h1>
+
+اتعلم الفيزياء مع
+
+<span>
+أحمد شوقي
+</span>
+
+</h1>
+
+<p>
+
+منصة تعليمية متكاملة
+لشرح مادة الفيزياء
+بطريقة سهلة وعصرية
+للثانوية العامة.
+
+</p>
+
+<!-- LOGIN -->
+
+<div class="login-box">
+
+<input type="email"
+       id="email"
+       placeholder="ادخل البريد الإلكتروني">
+
+<input type="password"
+       id="password"
+       placeholder="ادخل كلمة المرور">
+
+<button class="btn primary"
+        onclick="register()">
+
+إنشاء حساب
+
+</button>
+
+<button class="btn secondary"
+        onclick="login()">
+
+تسجيل الدخول
+
+</button>
+
+</div>
+
+<div class="buttons">
+
+<a href="#courses"
+   class="btn primary">
+
+ابدأ الآن
+
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<div class="teacher-card">
+
+<img src="teacher.jpg.jpeg"
+     alt="Ahmed Shawky">
+
+<h2>
+أ / أحمد شوقي
+</h2>
+
+<p>
+
+مدرس الفيزياء للثانوية العامة
+بخبرة كبيرة في تبسيط القوانين
+والمسائل بطريقة سهلة.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="courses"
+         id="courses"
+         style=" display:none;">
+
+<h2 class="section-title">
+
+ليه تختار
+<span>المنصة ؟</span>
+
+</h2>
+
+<div class="courses-grid">
+
+<div class="courses-box">
+
+<h3>
+
+          مراجعات شاملة قبل الامتحانات تحتوي
+          على أهم الأفكار والأسئلة المتوقعة.
+        
+</h3>
+
+
+        <br>
+
+        <p>
+          الفصل الخامس :
+          <br>
+
+          <a href="https://www.youtube.com/watch?v=R6755ve0H7o" target="_blank">
+            الفصل الخامس 1
+          </a>
+
+          <br>
+
+          <a href="https://www.youtube.com/watch?v=k7qQabM2mik&t=7s" target="_blank">
+            الفصل الخامس 2
+          </a>
+        </p>
+
+        <br>
+
+        <p>
+          الفصل الرابع :
+          <br>
+
+          <a href="https://www.youtube.com/watch?v=T8Ubwp4YsI0" target="_blank">
+            الفصل الرابع 1
+          </a>
+
+          <br>
+
+          <a href="https://www.youtube.com/watch?v=PvyBL0gs3pA" target="_blank">
+            الفصل الرابع 2
+          </a>
+
+          <br>
+
+          <a href="https://www.youtube.com/watch?v=i9Sq5bnG-og" target="_blank">
+            الفصل الرابع 3
+          </a>
+        </p>
+
+        <br>
+
+        <p>
+          الفصل الثالث :
+          <br>
+
+          <a href="https://www.youtube.com/watch?v=iO7tP6EbI7s&pp=0gcJCQMLAYcqIYzv" target="_blank">
+            الفصل الثالث 1
+          </a>
+
+          <br>
+
+          <a href="https://www.youtube.com/watch?v=IvHPAi8bkYA" target="_blank">
+            الفصل الثالث 2
+          </a>
+
+          <br>
+
+          <a href="https://www.youtube.com/watch?v=HL6D3Wvu_mw&t=23s" target="_blank">
+            الفصل الثالث 3
+          </a>
+
+          <br>
+
+          <a href="https://www.youtube.com/watch?v=Yrbp-cmzAso" target="_blank">
+            الفصل الثالث 4
+          </a>
+        </p>
+
+</div>
+
+<div class="courses-box">
+
+<h3>
+متابعة مستمرة
+</h3>
+
+<p>
+متابعة مع الطلاب
+وحل الواجبات والأسئلة.
+</p>
+
+<br>
+
+<a href="https://wa.me/201108776433"
+   target="_blank">
+
+التواصل واتساب
+
+</a>
+
+<br><br>
+
+<a href="https://www.facebook.com/share/18vL1ndfd5/"
+   target="_blank">
+
+التواصل فيسبوك
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer class="footer">
+
+<h3>
+منصة أحمد شوقي للفيزياء
+</h3>
+
+<br>
+
+<p>
+Phone : +201108776433
+</p>
+
+</footer>
+
+<!-- FIREBASE -->
+
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+
+<script>
+
+const firebaseConfig = {
+
+apiKey:
+"AIzaSyAYv4DFTnLiH7HvVKrAV9waWN8HEpDMUEs",
+
+authDomain:
+"ahmed-shawky-2008.firebaseapp.com",
+
+projectId:
+"ahmed-shawky-2008",
+
+storageBucket:
+"ahmed-shawky-2008.firebasestorage.app",
+
+messagingSenderId:
+"104290564571",
+
+appId:
+"1:104290564571:ios:738ff2d2109be4df09cffe"
+
+};
+
+firebase.initializeApp(firebaseConfig);
+
+const auth = firebase.auth();
+
+function register(){
+
+const email =
+document.getElementById(
+'email'
+).value;
+
+const password =
+document.getElementById(
+'password'
+).value;
+
+auth.createUserWithEmailAndPassword(
+email,
+password
+)
+
+.then(function(){
+
+alert(
+'تم إنشاء الحساب بنجاح'
+);
+
+})
+
+.catch(function(error){
+
+alert(error.message);
+
+});
+
+}
+
+function login(){
+
+const email =
+document.getElementById(
+'email'
+).value;
+
+const password =
+document.getElementById(
+'password'
+).value;
+
+auth.signInWithEmailAndPassword(
+email,
+password
+)
+
+.then(function(){
+
+alert(
+'تم تسجيل الدخول بنجاح'
+);
+/* اضهار المنصه */
+document.getElementById(
+'courses'
+).style.display = 'block';
+
+/* إخفاء مربع تسجيل الدخول */
+
+document.querySelector(
+'.login-box'
+).style.display = 'none';
+
+/* الانتقال للكورسات */
+
+window.location.href =
+'#courses';
+
+})
+
+.catch(function(error){
+
+alert(error.message);
+
+});
+
+}
+
+</script>
+
+</body>
+
+</html>
